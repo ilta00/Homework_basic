@@ -1,5 +1,9 @@
 package ru.timonova.main.exceptions;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
 public class CraftFactory {
 
     public static void createNoteBook() {
@@ -37,6 +41,9 @@ public class CraftFactory {
                 System.out.println(e.getMessage());
             }
 
+            System.out.println("");
+            System.out.println("OutOfMemoryError");
+            tryOutOfMemoryError();
         } finally {
             System.out.println("Конец!");
         }
@@ -44,6 +51,16 @@ public class CraftFactory {
 
     private static Sheet getLastSheetOfNoteBook(NoteBook noteBook) throws Exception {
         return noteBook.getSheetByIndex(100);
+    }
+
+    public static void tryOutOfMemoryError() {
+        Map m = new HashMap();
+        m = System.getProperties();
+        Random r = new Random();
+
+        while (true) {
+            m.put(r.nextInt(), "randomValue");
+        }
     }
 
 

@@ -21,9 +21,9 @@ public class Sheet {
         }
     }
 
-    private void setHeigth(int height) throws Exception {
+    private void setHeigth(int height) {
         if (height > MAX_HEIGHT)
-            throw new Exception("Высота листа больше допустимой!");
+            throw new HeightLargerThanAllowedRunTimeException();
         this.height = height;
     }
 

@@ -1,22 +1,23 @@
 package ru.timonova.main.exceptions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NoteBook implements AutoCloseable {
     private int height;
     private int width;
-    private ArrayList<Sheet> sheets;
+    private List<Sheet> sheets;
     private int sheetCount = 0;
 
     public NoteBook(int countLSheet, int height, int width) {
-        sheets = new ArrayList<>(countLSheet);
+        sheets = new ArrayList<Sheet>(countLSheet);
         this.height = height;
         this.width = width;
     }
 
     public void addSheet(Sheet sheet) throws Exception {
         if (sheet.getHeight() > this.height || sheet.getWidth() > this.width)
-            throw new Exception("Невозможно добавить лист в блокнот, он слишком большой: " + sheet.getHeight() + "x" + sheet.getWidth() + ", размер блокнота: " + height + "x" + width);
+            throw new BigSheetSizeException(sheet.getHeight(), sheet.getWidth(), height, width);
         sheetCount++;
         sheets.add(sheet);
     }

@@ -6,6 +6,5 @@ public class Homework_basic {
 
     public static void main(String[] args) {
             CraftFactory.createNoteBook();
-
     }
 }
