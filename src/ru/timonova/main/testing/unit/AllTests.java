@@ -13,7 +13,13 @@ public class AllTests {
         new DiceImplTest().testDiceImplIfTheValueInRange();
         System.out.println("\n\n----------------------\n\n");
 
-        new GameTest().testGame();
+        new GameTest().testGamePrintWinner();
+        System.out.println("\n\n----------------------\n\n");
+
+        new GameTest().testGameEqualsValue();
+        System.out.println("\n\n----------------------\n\n");
+
+        new GameTest().testGameNullValue();
         System.out.println("\n\n----------------------\n\n");
     }
 }

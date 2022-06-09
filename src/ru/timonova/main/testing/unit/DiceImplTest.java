@@ -20,7 +20,7 @@ public class DiceImplTest {
     }
 
     public void testDiceImplIfTheValueInRange() {
-        String scenario = "V1. Тест вхождения возвращаемого значения в диапазон";
+        String scenario = "D1. Тест вхождения возвращаемого значения в диапазон";
         try {
             Dice dice = new DiceImpl();
             int rollResult = dice.roll();
